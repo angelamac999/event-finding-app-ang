@@ -1,0 +1,66 @@
+html {
+    font-family: 'Manjari', sans-serif;
+}
+
+body {
+    margin: 50px;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #ff006f;
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #000;
+    margin-bottom: 20px;
+}
+
+nav a {
+    margin: 0 10px;
+}
+
+a {
+    color: #ff006f;
+}
+
+#new-event {
+    width: 100%;
+    background-color: #ff006f;
+    color: #fff;
+    border: 1px solid #ff006f;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    height: 50px;
+    cursor: pointer;
+}
+
+#new-event:hover {
+    text-decoration: underline;
+}
+
+.details-box {
+    border: 1px solid #ff006f;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.details-box a {
+    color: #000 !important;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.details-box a:hover {
+    text-decoration: underline;
+}

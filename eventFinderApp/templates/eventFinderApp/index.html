@@ -1,0 +1,15 @@
+{% extends "./base.html" %}
+
+{% block content %}
+
+    <button id="new-event">+ Create new event</button>
+    <h3>See what's on!</h3>
+    {% if events_list %}
+        {% for event in events_list %}
+            {% include "./detailsBox.html" with event=event %}
+        {% endfor %}
+    {% else %}
+        <p>No events are available.</p>
+    {% endif %}
+
+{% endblock %}
