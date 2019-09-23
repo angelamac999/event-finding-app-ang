@@ -1,6 +1,21 @@
+{% comment %} {% extends "base.html" %} {% endcomment %}
+{% block content %}
+
 <div class="details-box">
     <a href="{% url 'eventFinderApp:event' event.id %}">
-        <p>{{ event.title }}</p>
-        <p>{{ event.start_time }}</p>
+        <p>title: {{ event.title }}</p>
+        <p>start: {{ event.start_time }}</p>
+        <p>end: {{ event.end_time }}</p>
+        <p>venue: {{ event.venue }}<p>
+        <p>categories: 
+            {% for cat in event.categories.all %}
+                {{ cat }}
+                {% if not forloop.first and not forloop.last %}
+                    ,
+                {% endif %}
+            {% endfor %}
+        </p>
     </a>
 </div>
+
+{% endblock %}
