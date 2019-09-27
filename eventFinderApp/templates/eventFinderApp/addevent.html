@@ -2,49 +2,16 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% load crispy_forms_tags %}
 
 <div class = "event-container">
 
-    <div class = "row justify-content-center">
-
-        <div class = "col-6" align="center">
-
-            <h2 class = "mb-5"> Add an event </h2>
-
-{% comment %} 
-
-            <form action = "{% url 'eventFinderApp:addevent' %}" method = "post">
-
+        <form action="" method="post">
                 {% csrf_token %}
-
-                {{ eventform| 'form' }}
-
-                <input type = "submit" value = "Submit">
-
-            </form> {% endcomment %}
-
- <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
-
-                        {% csrf_token %}
-
-                        {% include 'eventFinderApp/event_form.html' %}
-
-                        <div class="form-group">
-
-                            <div class="col-sm-offset-2 col-sm-10">
-
-                                <button type="submit" class="btn btn-success">Submit</button>
-
-                            </div>
-
-                        </div>
-
-                    </form>
-
-            {% endblock %}
-
-        </div>
-
-    </div>
-
+                {{ form|crispy }}
+            <input type="submit" value="Create" id="submit">
+            </form>
 </div>
+{% endblock %}
+
+   

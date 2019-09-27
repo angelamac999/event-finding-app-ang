@@ -1,17 +1,41 @@
+from django import forms
 from django.forms import ModelForm
 from .models import Event, Category
 
+class DateInput(forms.DateInput):
+      input_type = 'date'
+      
 class EventForm(ModelForm):
+   class Meta:
+       model = Event
+       fields = [
+           'title',
+           'venue',
+           'location',
+           'start_time',
+           'end_time',
+           'categories',
+           ]
+       widgets = {
+          'start_time': DateInput(),
+          'end_time': DateInput(),
+      }
 
-    class Meta:
-
-        model = Event
-        fields = ['title', 'location', 'venue', 'start_time', 'end_time']
 
 
+# class EventForm(ModelForm):
+#     start_time = forms.start    
+#     widget=forms.SelectDateWidget)
+
+#     class Meta:
+
+#         model = Event
+#         fields = ['title', 'location', 'venue', 'start_time', 'end_time']
 
 
 
+
+# make a class and add a widget
 
 # from django.contrib.auth.models import User
 # from django import forms
