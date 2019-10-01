@@ -14,6 +14,7 @@ h1 {
 
 h2 {
     margin: 0;
+    color: orange;
 }
 
 header {
@@ -26,11 +27,28 @@ header {
 
 nav a {
     margin: 0 10px;
+    text-transform: capitalize;
 }
 
 a {
     color: #ff006f;
 }
+
+p {
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+h4 {
+    font-size: 20px;
+    margin:0 0 10px;
+}
+
+h6 {
+    font-size: 20px;
+    color: green;
+}
+
 
 #new-event {
     width: 100%;

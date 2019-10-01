@@ -3,7 +3,13 @@
 
 
 
+<p> Welcome  {{ user.username }} </p>
+
+
+<div class="container">
+
 <h3>Profile</h3>
+<br>
 
 <p>Username: {{ user.username }}</p>
 
@@ -11,11 +17,15 @@
 
 <p>Last Name: {{ user.last_name }}</p>
 
-<p>Email: {{ user.email }}</p>
+<h4>Email: {{ user.email }}</h4>
+<br>
 
 
+<form>
+<a href = '\users\profile\edit'>Click here to edit your profile</a>
 
 
+</form>
 
 <h3>Your events:</h3>
 
@@ -33,8 +43,6 @@
 
     {% endif %}
 
+    <br>
 
-
-
-
-{% endblock %}
+{% endblock %} 

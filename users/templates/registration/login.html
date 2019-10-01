@@ -4,10 +4,14 @@
 
 {% block content %}
 <h2>Login</h2>
+<br>
 <form method="post">
   {% csrf_token %}
   {{ form.as_p }}
   <button type="submit">Login</button>
+ <br>
+ <br>
+  <a href = '\users\password_reset'>Click here to reset your password</a>
 </form>
 {% endblock %}
 

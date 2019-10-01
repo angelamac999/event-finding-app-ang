@@ -1,0 +1,89 @@
+html {
+    font-family: 'Manjari', sans-serif;
+}
+
+body {
+    margin: 50px;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #ff006f;
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+    color: blue;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #000;
+    margin-bottom: 20px;
+}
+
+nav a {
+    margin: 0 10px;
+    text-transform: capitalize;
+}
+
+a {
+    color: #ff006f;
+}
+
+p {
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+h4 {
+    font-size: 20px;
+    margin:0 0 10px;
+}
+
+h6 {
+    font-size: 20px;
+    color: green;
+}
+
+
+#new-event {
+    width: 100%;
+    background-color: #ff006f;
+    color: #fff;
+    border: 1px solid #ff006f;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    height: 50px;
+    cursor: pointer;
+}
+
+#new-event:hover {
+    text-decoration: underline;
+}
+
+.details-box {
+    border: 1px solid #ff006f;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.details-box a {
+    color: #000 !important;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.details-box a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    font-size: 10px;
+    color: red;
+}

@@ -1,12 +1,13 @@
 from django import forms
 from django.forms import ModelForm
 from .models import Event, Category
+from django.contrib.admin import widgets
 
 class DateInput(forms.DateInput):
       input_type = 'date'
       
 class EventForm(ModelForm):
-   class Meta:
+    class Meta:
        model = Event
        fields = [
            'title',
@@ -15,11 +16,39 @@ class EventForm(ModelForm):
            'start_time',
            'end_time',
            'categories',
+           'host',
+           'image',
            ]
-       widgets = {
-          'start_time': DateInput(),
-          'end_time': DateInput(),
-      }
+     
+
+    def __init__(self, *args, **kwargs):
+        super(EventForm, self).__init__(*args, **kwargs)
+        # self.fields['start_time'].widget = widgets.AdminDateWidget()
+        # self.fields['end_time'].widget = widgets.AdminTimeWidget()
+        self.fields['start_time'].widget = widgets.AdminSplitDateTime()
+        self.fields['end_time'].widget = widgets.AdminSplitDateTime()
+
+
+
+class EditEventForm(ModelForm):
+    class Meta:
+        model = Event
+        fields = (
+                 'title',
+                 'venue',
+               
+                )
+
+#   widgets = {
+#           'start_time': DateInput(),
+#           'end_time': DateInput(),
+#       }
+
+
+
+
+
+
 
 
 

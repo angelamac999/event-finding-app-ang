@@ -3,7 +3,8 @@ from django.urls import reverse, reverse_lazy
 from django.views import generic
 from django.shortcuts import render
 from .models import Event
-from .forms import EventForm
+from .forms import EventForm, EditEventForm
+
 
 
 class IndexView(generic.ListView):
@@ -23,6 +24,25 @@ class AccountView(generic.ListView):
         """Return the events."""
         return Event.objects.filter(host=self.request.user)
 
+
+def edit_event(request):
+    if request.method == 'POST':
+        form = EditEventForm(request.POST, instance=request.self)
+        if form.is_valid():
+            form.save()
+
+            return Event.objects.filter(host=self.request.user)
+
+    else:
+            form = EditEventForm(instance=request.user)
+
+            args = {'form' : form}
+            return render(request, 'eventFinderApp/edit_event.html', args)
+
+
+
+
+   
 
 class EventView(generic.DetailView):
     model = Event
@@ -137,9 +157,6 @@ class AddEventCreateView(generic.CreateView):
     form_class = EventForm
     template_name = "eventFinderApp/addevent.html"
     success_url = reverse_lazy("eventFinderApp:index")
-
-
-
 
 
 # from django.http import HttpResponse, HttpResponseRedirect
