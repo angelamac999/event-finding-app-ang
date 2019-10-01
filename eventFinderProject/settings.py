@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "crispy_forms",
+    'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 AUTH_USER_MODEL = "users.CustomUser"
@@ -127,6 +129,9 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 STATICFILES_DIRS = [
@@ -139,3 +144,8 @@ LOGIN_REDIRECT_URL = "eventFinderApp:index"
 
 LOGOUT_REDIRECT_URL = "eventFinderApp:index"
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
