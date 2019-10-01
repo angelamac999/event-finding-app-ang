@@ -1,5 +1,6 @@
 {% load staticfiles %}
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
 <link rel="stylesheet" type="text/css" href="{% static 'eventFinderApp/style.css' %}" />
 
 
@@ -14,7 +15,72 @@
       
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
+            <li class="nav-item active">
+
+                    <a class="nav-link" href="{% url 'eventFinderApp:index' %}">Home</a>            </li>
+
+            <li class="nav-item">
+
+                    <a class="nav-link" href="{% url 'eventFinderApp:account' %}">My Account</a>            </li>
+
+            <li class="nav-item">
+
+                    {% if user.is_authenticated %}
+
+                    <a class="nav-link">Hi {{ user.username }}</a>
+
+                    <a class="nav-link" href="{% url 'logout' %}">logout</a></li>
+
+                {% else %}
+
+                    <a class="nav-link" href="{% url 'login' %}">login</a></p>
+
+                    <a class="nav-link" href="{% url 'register' %}">register</a></p>
+
+                {% endif %}            </li>
+
+          </ul>
+
+          <form class="form-inline my-2 my-lg-0">
+
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+
+            <button type="submit" class="w3-bar-item w3-button w3-green"><i class="material-icons">search</i></button>
+
+           
+            {% comment %} <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> {% endcomment %}
+
+          </form>
+
+        </div>
+
+      </nav>
+
+
+
+{% comment %} in case it goes wrong - here's what i had before: {% endcomment %}
+
+{% comment %} 
+
+      {% load staticfiles %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="{% static 'eventFinderApp/style.css' %}" />
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+
+          <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+      
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
             <li class="nav-item active">
@@ -51,7 +117,4 @@
 
         </div>
 
-      </nav>
-
-
-
+      </nav> {% endcomment %}
