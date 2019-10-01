@@ -1,11 +1,15 @@
-
+{% extends "base.html" %}
 
 {% block content %}
 
 <h2>{{ event.title }}</h2>
+<br>
 
 <p>{{ event.location }}</p>
-<p>Starts at: {{ event.start_time }}</p>
-<p>Ends at: {{ event.end_time }}</p>
+<p>{{ event.venue }} </p>
+<h4>Starts at: {{ event.start_time }}</h4>
+<h4>Ends at: {{ event.end_time }}</h4>
+<br>
+<h6> Why not go along! </h6>
 
 {% endblock %}

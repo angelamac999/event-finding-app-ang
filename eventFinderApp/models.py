@@ -15,6 +15,7 @@ class Event(models.Model):
     end_time = models.DateTimeField('end time and date')
     categories = models.ManyToManyField('Category', related_name='events')
     host = models.ForeignKey(User, on_delete=models.CASCADE, related_name='events')
+    image = models.ImageField(upload_to='profile_image', blank=True)
 
     # email = models.ForeignKey(email, on_delete=models.CASCADE)
 

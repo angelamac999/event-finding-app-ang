@@ -1,5 +1,6 @@
 from django.urls import path
-
+from django.conf import settings
+from django.conf.urls.static import static
 from . import views
 
 app_name = 'eventFinderApp'
@@ -26,4 +27,6 @@ urlpatterns = [
 
     # event-finder/user
 
-]
+    path("event/edit/", views.edit_event, name="edit_event"),
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
